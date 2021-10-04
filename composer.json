@@ -1,0 +1,8 @@
+{
+    "name": "sa_03_crud/mvc",
+    "autoload":{
+        "psr-4":{
+            "App\\":"app/"
+        }
+    }
+}
