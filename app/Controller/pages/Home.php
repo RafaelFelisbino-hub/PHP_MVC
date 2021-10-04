@@ -11,11 +11,9 @@ class Home extends Page{
         $obOrganization = new Organization;
 
         $content =  View::render('pages/home',[
-            'name' => $obOrganization->name,
-            'description' => $obOrganization->description,
-            'site' => $obOrganization->site
+            'name' => $obOrganization->name
         ]);
 
-        return parent::getPage('sa_03_crud', $content);
+        return parent::getPage('HOME - sa_03_crud', $content);
     }
 }
