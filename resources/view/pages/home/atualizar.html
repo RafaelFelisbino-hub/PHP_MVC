@@ -1,0 +1,27 @@
+<h3 style="margin-bottom: 20px;">Atualizar paciente</h3>
+            <div class="formPaciente">
+                <form method="POST">
+                    <label for="nome">Nome:</label>
+                    <input type="text" name="nome" id="nome" value="{{nome_paciente}}">
+                    <label for="rua">Rua:</label>
+                    <input type="text" name="rua" id="rua" value="{{rua}}">
+                    <label for="numero">Número:</label>
+                    <input type="text" name="numero" id="numero" value="{{numero}}">
+                    <label for="complemento">Complemento</label>
+                    <input type="text" name="complemento" id="complemento" value="{{complemento}}">
+                    <label for="bairro">Bairro:</label>
+                    <input type="text" name="bairro" id="bairro" value="{{bairro}}">
+                    <label for="cep">Cep:</label>
+                    <input type="text" name="cep" id="cep" value="{{cep}}">
+                    <label for="email">E-mail:</label>
+                    <input type="email" name="email" id="email" value="{{email}}">
+                    <label for="telefoneFixo">Telefone:</label>
+                    <input type="text" name="telefoneFixo" id="telefoneFixo" value="{{telefone}}">
+                    <div style="text-align: center;">
+                        <button type="submit" class="btnCadastro">Atualizar</button>
+                        <a href="{{URL}}/" style="text-align: center;"">
+                            <button type="button" class="btnCadastro">Voltar</button>
+                        </a>
+                    </div>
+                </form>
+            </div>
