@@ -1,1 +1,59 @@
-<h1>Home {{name}}</h1>
+    <h1>Pacientes</h1>
+
+    <h2>{{title}} Paciente</h2>
+    <form class="formPaciente" method="post">
+        <label for="nome_paciente">Nome: </label>
+        <input type="text" name="nome_paciente" id="nome_paciente"><br><br>
+
+        <label for="rua">Rua: </label>
+        <input type="text" name="rua" id="rua"><br><br>
+
+        <label for="numero">Número: </label>
+        <input type="text" name="numero" id="numero"><br><br>
+
+        <label for="complemento">Complemento: </label>
+        <input type="text" name="complemento" id="complemento"><br><br>
+
+        <label for="bairro">Bairro: </label>
+        <input type="text" name="bairro" id="bairro"><br><br>
+
+        <label for="cep">CEP: </label>
+        <input type="text" name="cep" id="cep"><br><br>
+
+        <label for="email">Email: </label>
+        <input type="email" name="email" id="email"><br><br>
+
+        <label for="telefone">Telefone: </label>
+        <input type="text" name="telefone" id="telefone"><br><br>
+
+        <hr>
+
+        <input class="btnCadastro" type="submit" value="Cadastrar">
+    </form>
+
+
+    <div style="margin-bottom: 15px;">
+        <h3>Pacientes cadastrados</h3>
+        <div class="cadastroResponsivo">
+            <a href="#" class="btnCadastro">{{title}}</a>
+        </div>
+    </div>
+    <div class="tableContainer">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>NOME</th>
+                    <th>RUA</th>
+                    <th>NÚMERO</th>
+                    <th>COMPLEMENTO</th>
+                    <th>BAIRRO</th>
+                    <th>CEP</th>
+                    <th>EMAIL</th>
+                    <th>TELEFONE</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{itens}}
+            </tbody>
+        </table>
+    </div>

@@ -44,6 +44,7 @@ create table funcionamento (
 	dias_funcionamento VARCHAR(20)
 );
 
+
 create table convenios(
 	id_convenio int(5) auto_increment primary key,
 	nome_fantasia varchar(40),
@@ -75,4 +76,3 @@ CREATE TABLE medicos (
     FOREIGN KEY (paciente_id_paciente) REFERENCES tbl_paciente(id_paciente)
 );
 
-drop table procedimento;

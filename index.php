@@ -1,16 +1,8 @@
 <?php
 
-require __DIR__ .'/vendor/autoload.php';
+require __DIR__.'/includes/app.php';
 
 use \App\Http\Router;
-use \App\Utils\View;
-
-define('URL','http://localhost/Senai/PHP_MVC');
-
-//Valor padrão das variáveis
-View::init([
-    'URL' => URL
-]);
 
 $obRouter = new Router(URL);
 
