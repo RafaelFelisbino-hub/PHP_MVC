@@ -1,3 +1,59 @@
-<h1>Médico {{name}}</h1>
+<h1>Médicos</h1>
 
-{{description}}
+<h2>{{title}} Médico</h2>
+<form class="formPaciente" method="post">
+    <label for="nome_paciente">Nome: </label>
+    <input type="text" name="nome_medico" id="nome_paciente"><br><br>
+
+    <label for="rua">Rua: </label>
+    <input type="text" name="rua_medico" id="rua"><br><br>
+
+    <label for="numero">Número: </label>
+    <input type="text" name="numero_medico" id="numero"><br><br>
+
+    <label for="complemento">Complemento: </label>
+    <input type="text" name="complemento_medico" id="complemento"><br><br>
+
+    <label for="bairro">Bairro: </label>
+    <input type="text" name="bairro_medico" id="bairro"><br><br>
+
+    <label for="cep">CEP: </label>
+    <input type="text" name="cep_medico" id="cep"><br><br>
+
+    <label for="email">Email: </label>
+    <input type="email" name="email_medico" id="email"><br><br>
+
+    <label for="telefone">Telefone: </label>
+    <input type="text" name="telefone_fixo_medico" id="telefone"><br><br>
+
+    <hr>
+
+    <input class="btnCadastro" type="submit" value="Cadastrar">
+</form>
+
+
+<div style="margin-bottom: 15px;">
+    <h3>Médicos cadastrados</h3>
+    <div class="cadastroResponsivo">
+        <a href="#" class="btnCadastro">{{title}}</a>
+    </div>
+</div>
+<div class="tableContainer">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>NOME</th>
+                <th>RUA</th>
+                <th>NÚMERO</th>
+                <th>COMPLEMENTO</th>
+                <th>BAIRRO</th>
+                <th>CEP</th>
+                <th>EMAIL</th>
+                <th>TELEFONE</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{itens}}
+        </tbody>
+    </table>
+</div>

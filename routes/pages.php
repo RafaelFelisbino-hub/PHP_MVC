@@ -10,14 +10,14 @@ $obRouter->get('/',[
     }
 ]);
 
-//Cadastrar
+//Cadastrar paciente
 $obRouter->post('/',[
     function($request){
         return new Response(200,Pages\Home::insertPaciente($request));
     }
 ]);
 
-//Update
+//Update paciente
 $obRouter->get('/home/{id_paciente}/atualizar',[
     function($request, $id_paciente){
         return new Response(200,Pages\Home::getEditPaciente($request, $id_paciente));
@@ -30,7 +30,7 @@ $obRouter->post('/home/{id_paciente}/atualizar',[
     }
 ]);
 
-//delete
+//delete paciente
 $obRouter->get('/home/{id_paciente}/deletar',[
     function($request, $id_paciente){
         return new Response(200,Pages\Home::getDeletePaciente($request, $id_paciente));
@@ -47,6 +47,39 @@ $obRouter->post('/home/{id_paciente}/deletar',[
 $obRouter->get('/medico',[
     function(){
         return new Response(200,Pages\Medico::getMedico());
+    }
+]);
+
+//Cadastrar médico
+$obRouter->post('/medico',[
+    function($request){
+        return new Response(200,Pages\Medico::insertMedico($request));
+    }
+]);
+
+//Update médico
+$obRouter->get('/medico/{id_medico}/atualizar',[
+    function($request, $id_medico){
+        return new Response(200,Pages\Medico::getEditMedico($request, $id_medico));
+    }
+]);
+
+$obRouter->post('/medico/{id_medico}/atualizar',[
+    function($request, $id_medico){
+        return new Response(200,Pages\Medico::setEditMedico($request, $id_medico));
+    }
+]);
+
+//Delete médico
+$obRouter->get('/medico/{id_medico}/deletar',[
+    function($request, $id_medico){
+        return new Response(200,Pages\Medico::getDeleteMedico($request, $id_medico));
+    }
+]);
+
+$obRouter->post('/medico/{id_medico}/deletar',[
+    function($request, $id_medico){
+        return new Response(200,Pages\Medico::setDeleteMedico($request, $id_medico));
     }
 ]);
 
