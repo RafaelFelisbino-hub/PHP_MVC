@@ -1,0 +1,71 @@
+<h1>Convênios</h1>
+
+<h2>{{title}} convênio</h2>
+<form method="post" class="formPaciente">
+    <label for="nome_fantasia">Nome Fantasia:</label>
+    <input type="text" name="nome_fantasia" id="nome_fantasia">
+
+    <label for="nome_empresa">Nome da Empresa:</label>
+    <input type="text" name="nome_empresa" id="nome_empresa">
+
+    <label for="cnpj">CNPJ:</label>
+    <input type="text" name="cnpj" id="cnpj">
+
+    <label for="email">E-Mail:</label>
+    <input type="email" name="email" id="email">
+
+    <label for="contato">Nome do Contato:</label>
+    <input type="text" name="nome_cont" id="nome_cont">
+
+    <label for="telefone">Telefone:</label>
+    <input type="tel" name="telefone" id="telefone">
+
+    <label for="endereco">Endereço:</label>
+    <input type="text" name="endereco" id="endereco">
+
+    <label for="numero">Número:</label>
+    <input type="number" name="numero" id="numero">
+
+    <label for="cep">CEP:</label>
+    <input type="number" name="cep" id="cep">
+
+    <label for="cidade">Cidade:</label>
+    <input type="text" name="cidade" id="cidade">
+
+    <label for="estado">Estado:</label>
+    <input type="text" name="estado" id="estado">
+
+    <hr>
+
+    <input class="btnCadastro" type="submit" value="Cadastrar">
+</form>   
+
+<div style="margin-bottom: 15px;">
+    <h3>Convênios cadastrados</h3>
+    <div class="cadastroResponsivo">
+        <a href="cadastro.html" class="btnCadastro">{{title}}</a>
+    </div>
+</div>
+
+<div class="tableContainer">
+    <table class="table">
+        <thead>
+            <tr>
+            <th>Nome Fantasia</th>
+            <th>Nome da Empresa</th>
+            <th>CNPJ</th>
+            <th>E-Mail</th>
+            <th>Nome do Contato</th>
+            <th>Telefone</th>
+            <th>Endereço</th>
+            <th>Número</th>
+            <th>CEP</th>
+            <th>Cidade</th>
+            <th>Estado</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{itens}}
+    </tbody>
+</table>
+</div>

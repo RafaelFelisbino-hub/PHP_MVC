@@ -3,7 +3,7 @@
 use \App\Http\Response;
 use \App\Controller\Pages;
 
-//Pacientes
+//PACIENTES
 $obRouter->get('/',[
     function(){
         return new Response(200,Pages\Home::getPaciente());
@@ -43,7 +43,7 @@ $obRouter->post('/home/{id_paciente}/deletar',[
     }
 ]);
 
-//Médico
+//MÉDICOS
 $obRouter->get('/medico',[
     function(){
         return new Response(200,Pages\Medico::getMedico());
@@ -82,6 +82,47 @@ $obRouter->post('/medico/{id_medico}/deletar',[
         return new Response(200,Pages\Medico::setDeleteMedico($request, $id_medico));
     }
 ]);
+
+//CONVÊNIOS
+$obRouter->get('/convenio',[
+    function(){
+        return new Response(200,Pages\Convenio::getConvenio());
+    }
+]);
+
+//Cadastrar convênio
+$obRouter->post('/convenio',[
+    function($request){
+        return new Response(200,Pages\Convenio::insertConvenio($request));
+    }
+]);
+
+//Update convênio
+$obRouter->get('/convenio/{id_convenio}/atualizar',[
+    function($request, $id_convenio){
+        return new Response(200,Pages\Convenio::getEditConvenio($request, $id_convenio));
+    }
+]);
+
+$obRouter->post('/convenio/{id_convenio}/atualizar',[
+    function($request, $id_convenio){
+        return new Response(200,Pages\Convenio::setEditConvenio($request, $id_convenio));
+    }
+]);
+
+//Delete convênio
+$obRouter->get('/convenio/{id_convenio}/deletar',[
+    function($request, $id_convenio){
+        return new Response(200,Pages\Convenio::getDeleteConvenio($request, $id_convenio));
+    }
+]);
+
+$obRouter->post('/convenio/{id_convenio}/deletar',[
+    function($request, $id_convenio){
+        return new Response(200,Pages\Convenio::setDeleteConvenio($request, $id_convenio));
+    }
+]);
+
 
 //Rota dinâmica
 $obRouter->get('/pagina/{idPagina}/{acao}',[

@@ -1,0 +1,42 @@
+<h3 style="margin-bottom: 20px;">Atualizar convênio</h3>
+<form method="post" class="formPaciente">
+    <label for="nome_fantasia">Nome Fantasia:</label>
+    <input type="text" name="nome_fantasia" id="nome_fantasia" value="{{nome_fantasia}}">
+
+    <label for="nome_empresa">Nome da Empresa:</label>
+    <input type="text" name="nome_empresa" id="nome_empresa" value="{{nome_empresa}}">
+
+    <label for="cnpj">CNPJ:</label>
+    <input type="text" name="cnpj" id="cnpj" value="{{cnpj}}">
+
+    <label for="email">E-Mail:</label>
+    <input type="email" name="email" id="email" value="{{email}}">
+
+    <label for="contato">Nome do Contato:</label>
+    <input type="text" name="nome_cont" id="nome_cont" value="{{nome_cont}}">
+
+    <label for="telefone">Telefone:</label>
+    <input type="tel" name="telefone" id="telefone" value="{{telefone}}">
+
+    <label for="endereco">Endereço:</label>
+    <input type="text" name="endereco" id="endereco" value="{{endereco}}">
+
+    <label for="numero">Número:</label>
+    <input type="number" name="numero" id="numero" value="{{numero}}">
+
+    <label for="cep">CEP:</label>
+    <input type="number" name="cep" id="cep" value="{{cep}}">
+
+    <label for="cidade">Cidade:</label>
+    <input type="text" name="cidade" id="cidade" value="{{cidade}}">
+
+    <label for="estado">Estado:</label>
+    <input type="text" name="estado" id="estado" value="{{estado}}">
+
+    <div style="text-align: center;">
+        <button type="submit" class="btnCadastro">Atualizar</button>
+        <a href="{{URL}}/convenio" style="text-align: center;"">
+            <button type="button" class="btnCadastro">Voltar</button>
+        </a>
+    </div>
+</form>

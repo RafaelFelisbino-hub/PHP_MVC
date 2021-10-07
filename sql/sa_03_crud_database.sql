@@ -53,14 +53,13 @@ create table convenios(
 	email varchar(40),
 	nome_cont varchar(40),
 	telefone VARCHAR(15),
-	celular VARCHAR(16),
 	endereco varchar(40),
 	numero INT(10),
-	complemento varchar(40),
 	cidade varchar(40),
 	estado varchar(40),
 	cep varchar(9)
 );
+
 
 CREATE TABLE medicos (
 	id_medico INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
@@ -75,4 +74,6 @@ CREATE TABLE medicos (
     paciente_id_paciente INT(5),
     FOREIGN KEY (paciente_id_paciente) REFERENCES tbl_paciente(id_paciente)
 );
+
+select * from medicos;
 
