@@ -163,6 +163,46 @@ $obRouter->post('/especialidade/{id_cadastro}/deletar',[
     }
 ]);
 
+//PROCEDIMENTOS
+
+$obRouter->get('/procedimento',[
+    function(){
+        return new Response(200,Pages\Procedimento::getProcedimento());
+    }
+]);
+
+//Cadastrar especialidade
+$obRouter->post('/procedimento',[
+    function($request){
+        return new Response(200,Pages\Procedimento::insertProcedimento($request));
+    }
+]);
+
+//Update especialidade
+$obRouter->get('/procedimento/{id_consulta}/atualizar',[
+    function($request, $id_consulta){
+        return new Response(200,Pages\Procedimento::getEditProcedimento($request, $id_consulta));
+    }
+]);
+
+$obRouter->post('/procedimento/{id_consulta}/atualizar',[
+    function($request, $id_consulta){
+        return new Response(200,Pages\Procedimento::setEditProcedimento($request, $id_consulta));
+    }
+]);
+
+//Delete especialidade
+$obRouter->get('/procedimento/{id_consulta}/deletar',[
+    function($request, $id_consulta){
+        return new Response(200,Pages\Procedimento::getDeleteProcedimento($request, $id_consulta));
+    }
+]);
+
+$obRouter->post('/procedimento/{id_consulta}/deletar',[
+    function($request, $id_consulta){
+        return new Response(200,Pages\Procedimento::setDeleteProcedimento($request, $id_consulta));
+    }
+]);
 
 //Rota dinâmica
 $obRouter->get('/especialidade/{idPagina}/{acao}',[

@@ -1,0 +1,21 @@
+<h3 style="margin-bottom: 20px;">Atualizar procedimento</h3>
+<form method="POST" class="formPaciente">
+    <label for="nome">Codigo:</label>
+    <input type="number" name="codigo" id="codigo" value="{{codigo}}">
+    <label for="valor">Valor:</label>
+    <input type="number" step=".01" name="valor" id="valor" value="{{valor}}">
+    <label for="nome">Nome Procedimento:</label>
+    <input type="text" name="nome" id="nome" value="{{nome}}">
+    <label for="data_procedimento">Data Procedimento</label>
+    <input type="date" name="data_procedimento" id="data_procedimento" value="{{data_procedimento}}">
+    <label for="genero">Gênero:</label>
+    <input type="text" name="genero" id="genero" value="{{genero}}">
+    <label for="exececao">Adicionar Exceção:</label>
+    <input type="text" name="excecao" id="excecao" value="{{excecao}}">
+    <div style="text-align: center;">
+        <button type="submit" class="btnCadastro">Atualizar</button>
+        <a href="{{URL}}/procedimento" style="text-align: center;">
+            <button type="button" class="btnCadastro">Voltar</button>
+        </a>
+    </div>
+</form>

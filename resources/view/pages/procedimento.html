@@ -1,0 +1,37 @@
+<h1>Procedimentos</h1>
+
+<h2>{{title}} procedimento</h2>
+<form method="POST" class="formPaciente">
+    <label for="nome">Codigo:</label>
+    <input type="number" name="codigo" id="codigo" required>
+    <label for="valor">Valor:</label>
+    <input type="number" step=".01" name="valor" id="valor" required>
+    <label for="nome">Nome Procedimento:</label>
+    <input type="text" name="nome" id="nome" required>
+    <label for="data_procedimento">Data Procedimento</label>
+    <input type="date" name="data_procedimento" id="data_procedimento">
+    <label for="genero">Gênero:</label>
+    <input type="text" name="genero" id="genero" required>
+    <label for="exececao">Adicionar Exceção:</label>
+    <input type="text" name="excecao" id="excecao" required>
+    <input class="btnCadastro" type="submit" value="Cadastrar">
+</form>
+<div style="margin-bottom: 15px;">
+    <h3>Procedimentos cadastrados</h3>
+</div>
+<div class="tableContainer">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>CODIGO</th>
+                <th>NOME PROCEDIMENTO</th>
+                <th>VALOR</th>
+                <th>DATA PROCEDIMENTO</th>
+                <th>EXCEÇÃO</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{itens}}
+        </tbody>
+    </table>
+</div>
