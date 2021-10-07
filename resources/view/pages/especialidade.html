@@ -1,0 +1,25 @@
+<h1>Especialidades</h1>
+<h2>{{title}} especialidade</h2>
+<form method="POST" class="formPaciente">
+
+    <label for="nome"><h3>Nome da Especialidade</h3></label>
+    <br>
+    <input type="text" name="nome_especialidade"  id="entrada" placeholder="Digite a especialidade"> 
+    <br>
+    <input class="btnCadastro" type="submit" value="Cadastrar">
+</form>
+
+<div style="margin-bottom: 15px;">
+    <h3>Especialidades cadastradas</h3>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>ESPECIALIDADE</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{itens}}
+    </tbody>
+</table>

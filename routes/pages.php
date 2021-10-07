@@ -123,9 +123,49 @@ $obRouter->post('/convenio/{id_convenio}/deletar',[
     }
 ]);
 
+//ESPECIALIDADES
+$obRouter->get('/especialidade',[
+    function(){
+        return new Response(200,Pages\Especialidade::getEspecialidade());
+    }
+]);
+
+//Cadastrar especialidade
+$obRouter->post('/especialidade',[
+    function($request){
+        return new Response(200,Pages\Especialidade::insertEspecialidade($request));
+    }
+]);
+
+//Update especialidade
+$obRouter->get('/especialidade/{id_cadastro}/atualizar',[
+    function($request, $id_cadastro){
+        return new Response(200,Pages\Especialidade::getEditEspecialidade($request, $id_cadastro));
+    }
+]);
+
+$obRouter->post('/especialidade/{id_cadastro}/atualizar',[
+    function($request, $id_cadastro){
+        return new Response(200,Pages\Especialidade::setEditEspecialidade($request, $id_cadastro));
+    }
+]);
+
+//Delete especialidade
+$obRouter->get('/especialidade/{id_cadastro}/deletar',[
+    function($request, $id_cadastro){
+        return new Response(200,Pages\Especialidade::getDeleteEspecialidade($request, $id_cadastro));
+    }
+]);
+
+$obRouter->post('/especialidade/{id_cadastro}/deletar',[
+    function($request, $id_cadastro){
+        return new Response(200,Pages\Especialidade::setDeleteEspecialidade($request, $id_cadastro));
+    }
+]);
+
 
 //Rota dinâmica
-$obRouter->get('/pagina/{idPagina}/{acao}',[
+$obRouter->get('/especialidade/{idPagina}/{acao}',[
     function($idPagina,$acao){
         return new Response(200,'Pagina '.$idPagina. ' - '.$acao);
     }

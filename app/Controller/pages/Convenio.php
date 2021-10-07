@@ -120,10 +120,8 @@ class Convenio extends Page{
     }
 
     public static function insertConvenio($request){
-        //Dados do post
         $postVars = $request->getPostVars();
 
-        //Instância de paciente
         $obConvenio = new EntityConvenio;
         $obConvenio->nome_fantasia = $postVars['nome_fantasia'];
         $obConvenio->nome_empresa = $postVars['nome_empresa'];

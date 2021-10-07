@@ -74,6 +74,3 @@ CREATE TABLE medicos (
     paciente_id_paciente INT(5),
     FOREIGN KEY (paciente_id_paciente) REFERENCES tbl_paciente(id_paciente)
 );
-
-select * from medicos;
-
