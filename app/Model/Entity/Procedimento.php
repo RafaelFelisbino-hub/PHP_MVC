@@ -15,7 +15,6 @@ class Procedimento{
 
     public function cadastrar(){
 
-        //Insere Paciente no banco de dados
         $this->id_consulta = (new Database('procedimento'))->insert([
             'codigo' => $this->codigo,
             'nome' => $this->nome,

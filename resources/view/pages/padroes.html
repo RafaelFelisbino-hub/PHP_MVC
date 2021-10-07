@@ -1,0 +1,36 @@
+<h1>Padrões</h1>
+
+<h2>{{title}} padrão</h2>
+<form method="post" class="formPaciente">
+    <label for="abertura_clinica">Abertura da clinica:</label>
+    <input type="text" name="abertura_clinica" id="abertura_clinica">
+
+    <label for="fechamento_clinica">Fechamento da clinica:</label>
+    <input type="text" name="fechamento_clinica" id="fechamento_clinica">
+
+    <label for="media_consultas">Media de tempo para consultas:</label>
+    <input type="text" name="media_consultas" id="media_consultas">
+
+    <label for="dias_funcionamento">Dias de funcionamento:</label>
+    <input type="dias_funcionamento" name="dias_funcionamento" id="dias_funcionamento">
+
+    <input class="btnCadastro" type="submit" value="Cadastrar">
+</form>
+<div style="margin-bottom: 15px;">
+    <h3>Padrões cadastrados</h3>
+</div>
+<div class="tableContainer">
+    <table class="table">
+        <thead>
+            <tr>
+            <th>ABERTURA</th>
+            <th>FECHAMENTO</th>
+            <th>TEMPO CONSULTA</th>
+            <th>DIAS DE FUNCIONAMENTO</th>
+        </tr>
+    </thead>
+        <tbody>
+            {{itens}}
+        </tbody>
+    </table>
+</div> 

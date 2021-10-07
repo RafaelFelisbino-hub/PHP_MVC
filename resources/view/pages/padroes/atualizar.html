@@ -1,0 +1,21 @@
+<h3 style="margin-bottom: 20px;">Atualizar padrão</h3>
+<form method="post" class="formPaciente">
+    <label for="abertura_clinica">Abertura da clinica:</label>
+    <input type="text" name="abertura_clinica" id="abertura_clinica" value="{{abertura_clinica}}">
+
+    <label for="fechamento_clinica">Fechamento da clinica:</label>
+    <input type="text" name="fechamento_clinica" id="fechamento_clinica" value="{{fechamento_clinica}}">
+
+    <label for="media_consultas">Media de tempo para consultas:</label>
+    <input type="text" name="media_consultas" id="media_consultas" value="{{media_consultas}}">
+
+    <label for="dias_funcionamento">Dias de funcionamento:</label>
+    <input type="dias_funcionamento" name="dias_funcionamento" id="dias_funcionamento" value="{{dias_funcionamento}}">
+
+    <div style="text-align: center;">
+        <button type="submit" class="btnCadastro">Atualizar</button>
+        <a href="{{URL}}/padroes" style="text-align: center;">
+            <button type="button" class="btnCadastro">Voltar</button>
+        </a>
+    </div>
+</form>

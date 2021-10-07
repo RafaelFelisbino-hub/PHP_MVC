@@ -204,6 +204,46 @@ $obRouter->post('/procedimento/{id_consulta}/deletar',[
     }
 ]);
 
+//PADRÕES
+$obRouter->get('/padroes',[
+    function(){
+        return new Response(200,Pages\Padrao::getPadrao());
+    }
+]);
+
+//Cadastrar especialidade
+$obRouter->post('/padroes',[
+    function($request){
+        return new Response(200,Pages\Padrao::insertPadrao($request));
+    }
+]);
+
+//Update especialidade
+$obRouter->get('/padroes/{id_funcionamento}/atualizar',[
+    function($request, $id_funcionamento){
+        return new Response(200,Pages\Padrao::getEditPadrao($request, $id_funcionamento));
+    }
+]);
+
+$obRouter->post('/padroes/{id_funcionamento}/atualizar',[
+    function($request, $id_funcionamento){
+        return new Response(200,Pages\Padrao::setEditPadrao($request, $id_funcionamento));
+    }
+]);
+
+//Delete especialidade
+$obRouter->get('/padroes/{id_funcionamento}/deletar',[
+    function($request, $id_funcionamento){
+        return new Response(200,Pages\Padrao::getDeletePadrao($request, $id_funcionamento));
+    }
+]);
+
+$obRouter->post('/padroes/{id_funcionamento}/deletar',[
+    function($request, $id_funcionamento){
+        return new Response(200,Pages\Padrao::setDeletePadrao($request, $id_funcionamento));
+    }
+]);
+
 //Rota dinâmica
 $obRouter->get('/especialidade/{idPagina}/{acao}',[
     function($idPagina,$acao){
