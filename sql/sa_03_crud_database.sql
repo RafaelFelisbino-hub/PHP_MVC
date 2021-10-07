@@ -44,7 +44,6 @@ create table funcionamento (
 	dias_funcionamento VARCHAR(20)
 );
 
-
 create table convenios(
 	id_convenio int(5) auto_increment primary key,
 	nome_fantasia varchar(40),
