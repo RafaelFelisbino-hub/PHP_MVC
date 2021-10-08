@@ -1,9 +1,12 @@
     <h1>Pacientes</h1>
 
     <h2>{{title}} Paciente</h2>
-    <form class="formPaciente" method="post">
+    <form class="formPaciente" method="post" action=".">
         <label for="nome_paciente">Nome: </label>
         <input type="text" name="nome_paciente" id="nome_paciente"><br><br>
+
+        <label for="cep">CEP: </label>
+        <input type="text" name="cep" id="cep" value=""><br><br>
 
         <label for="rua">Rua: </label>
         <input type="text" name="rua" id="rua"><br><br>
@@ -16,9 +19,6 @@
 
         <label for="bairro">Bairro: </label>
         <input type="text" name="bairro" id="bairro"><br><br>
-
-        <label for="cep">CEP: </label>
-        <input type="text" name="cep" id="cep"><br><br>
 
         <label for="email">Email: </label>
         <input type="email" name="email" id="email"><br><br>
