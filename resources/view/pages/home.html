@@ -1,56 +1,107 @@
-    <h1>Pacientes</h1>
+<h1>Pacientes</h1>
 
-    <h2>{{title}} Paciente</h2>
-    <form class="formPaciente" method="post" action=".">
-        <label for="nome_paciente">Nome: </label>
-        <input type="text" name="nome_paciente" id="nome_paciente"><br><br>
+<h2>{{title}} Paciente</h2>
+<form class="formPaciente" method="post" action="." id="formularioPaciente">
+    <label for="nome_paciente">Nome: </label>
+    <input type="text" name="nome_paciente" id="nome_paciente"><br><span id="erroNomePaciente"></span><br>
 
-        <label for="cep">CEP: </label>
-        <input type="text" name="cep" id="cep" value=""><br><br>
+    <label for="cep">CEP: </label>
+    <input type="text" name="cep" id="cep" value=""><br><br>
 
-        <label for="rua">Rua: </label>
-        <input type="text" name="rua" id="rua"><br><br>
+    <label for="rua">Rua: </label>
+    <input type="text" name="rua" id="rua"><br><span id="erroRuaPaciente"></span><br>
 
-        <label for="numero">Número: </label>
-        <input type="text" name="numero" id="numero"><br><br>
+    <label for="numero">Número: </label>
+    <input type="text" name="numero" id="numero"><br><span id="erroNumeroPaciente"></span><br>
 
-        <label for="complemento">Complemento: </label>
-        <input type="text" name="complemento" id="complemento"><br><br>
+    <label for="complemento">Complemento: </label>
+    <input type="text" name="complemento" id="complemento"><br><span id="erroComplementoPaciente"></span><br>
 
-        <label for="bairro">Bairro: </label>
-        <input type="text" name="bairro" id="bairro"><br><br>
+    <label for="bairro">Bairro: </label>
+    <input type="text" name="bairro" id="bairro"><br><span id="erroBairroPaciente"></span><br>
 
-        <label for="email">Email: </label>
-        <input type="email" name="email" id="email"><br><br>
+    <label for="email">Email: </label>
+    <input type="email" name="email" id="email"><br><span id="erroEmailPaciente"></span><br>
 
-        <label for="telefone">Telefone: </label>
-        <input type="text" name="telefone" id="telefone"><br><br>
+    <label for="telefone">Telefone: </label>
+    <input type="text" name="telefone" id="telefone"><br><span id="erroTelefonePaciente"></span><br>
 
-        <hr>
+    <hr>
 
-        <input class="btnCadastro" type="submit" value="Cadastrar">
-    </form>
+    <input class="btnCadastro" type="submit" value="Cadastrar">
+</form>
 
 
-    <div style="margin-bottom: 15px;">
-        <h3>Pacientes cadastrados</h3>
-    </div>
-    <div class="tableContainer">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>NOME</th>
-                    <th>RUA</th>
-                    <th>NÚMERO</th>
-                    <th>COMPLEMENTO</th>
-                    <th>BAIRRO</th>
-                    <th>CEP</th>
-                    <th>EMAIL</th>
-                    <th>TELEFONE</th>
-                </tr>
-            </thead>
-            <tbody>
-                {{itens}}
-            </tbody>
-        </table>
-    </div>
+<div style="margin-bottom: 15px;">
+    <h3>Pacientes cadastrados</h3>
+</div>
+<div class="tableContainer">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>NOME</th>
+                <th>RUA</th>
+                <th>NÚMERO</th>
+                <th>COMPLEMENTO</th>
+                <th>BAIRRO</th>
+                <th>CEP</th>
+                <th>EMAIL</th>
+                <th>TELEFONE</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{itens}}
+        </tbody>
+    </table>
+</div>
+
+<script>
+const nome_paciente = document.getElementById('nome_paciente');
+const cep = document.getElementById('cep');
+const rua = document.getElementById('rua');
+const numero = document.getElementById('numero');
+const complemento = document.getElementById('complemento');
+const bairro = document.getElementById('bairro');
+const email = document.getElementById('email');
+const telefone = document.getElementById('telefone');
+const form = document.getElementById('formularioPaciente');
+
+form.addEventListener('submit', (e)=>{
+
+    let cont = 0;
+
+    if(nome_paciente.value === '' || nome_paciente.value == null){
+        cont++;
+        document.getElementById('erroNomePaciente').innerText = 'Nome inválido';
+    }
+
+    if(rua.value === '' || rua.value == null){
+        cont++;
+        document.getElementById('erroRuaPaciente').innerText = 'Rua inválida';
+    }
+
+    if(numero.value === '' || numero.value == null){
+        cont++;
+        document.getElementById('erroNumeroPaciente').innerText = 'Numero inválido';
+    }
+
+    if(bairro.value === '' || bairro.value == null){
+        cont++;
+        document.getElementById('erroBairroPaciente').innerText = 'Bairro inválido';
+    }
+
+    if(email.value === '' || email.value == null){
+        cont++;
+        document.getElementById('erroEmailPaciente').innerText = 'Email inválido';
+    }
+
+    if(telefone.value === '' || telefone.value == null){
+        cont++;
+        document.getElementById('erroTelefonePaciente').innerText = 'Telefone inválido';
+    }
+
+    if(cont > 0){
+        e.preventDefault();
+    }
+});
+</script>

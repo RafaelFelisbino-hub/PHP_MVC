@@ -1,19 +1,19 @@
 <h1>Procedimentos</h1>
 
 <h2>{{title}} procedimento</h2>
-<form method="POST" class="formPaciente">
+<form method="POST" class="formPaciente" id="formularioProcedimento">
     <label for="nome">Codigo:</label>
-    <input type="number" name="codigo" id="codigo" required>
+    <input type="number" name="codigo" id="codigo"><span id="erroCodigoProcedimento"></span><br>
     <label for="valor">Valor:</label>
-    <input type="number" step=".01" name="valor" id="valor" required>
+    <input type="number" step=".01" name="valor" id="valor"><span id="erroValorProcedimento"></span><br>
     <label for="nome">Nome Procedimento:</label>
-    <input type="text" name="nome" id="nome" required>
+    <input type="text" name="nome" id="nome">
     <label for="data_procedimento">Data Procedimento</label>
-    <input type="date" name="data_procedimento" id="data_procedimento">
+    <input type="date" name="data_procedimento" id="data_procedimento"><span id="erroDataProcedimento"></span><br>
     <label for="genero">Gênero:</label>
-    <input type="text" name="genero" id="genero" required>
+    <input type="text" name="genero" id="genero"><span id="erroGeneroProcedimento"></span><br>
     <label for="exececao">Adicionar Exceção:</label>
-    <input type="text" name="excecao" id="excecao" required>
+    <input type="text" name="excecao" id="excecao"><span id="erroExcecaoProcedimento"></span><br>
     <input class="btnCadastro" type="submit" value="Cadastrar">
 </form>
 <div style="margin-bottom: 15px;">
@@ -35,3 +35,36 @@
         </tbody>
     </table>
 </div>
+<script>
+    const codigo = document.getElementById('codigo');
+    const valor = document.getElementById('valor');
+    const nome = document.getElementById('nome');
+    const data_procedimento = document.getElementById('data_procedimento');
+    const genero = document.getElementById('genero');
+    const excecao  = document.getElementById('excecao');
+    const form = document.getElementById('formularioProcedimento');
+
+    form.addEventListener('submit',(e)=> {
+
+        cont = 0;
+
+        if(codigo.value === '' || codigo.value == null){
+            cont++;
+            document.getElementById('erroCodigoProcedimento').innerText = 'Codigo inválido';
+        }
+
+        if(valor === '' || valor == null){
+            cont++;
+            document.getElementById('erroValorProcedimento').innerText = 'Valor inválido';
+        }
+
+        if(nome.value === '' || nome.value == null){
+            cont++;
+            document.getElementById('erroNomeProcedimento').innerText = 'Nome inválido';
+        }
+
+        if(cont > 0){
+        e.preventDefault();
+        }
+    });
+</script>

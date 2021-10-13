@@ -1,10 +1,11 @@
 <h1>Especialidades</h1>
 <h2>{{title}} especialidade</h2>
-<form method="POST" class="formPaciente">
+<form method="POST" class="formPaciente" id="formularioEspecialidade">
 
     <label for="nome"><h3>Nome da Especialidade</h3></label>
     <br>
-    <input type="text" name="nome_especialidade"  id="entrada" placeholder="Digite a especialidade"> 
+    <input type="text" name="nome_especialidade"  id="nome_especialidade" placeholder="Digite a especialidade">
+    <span id="erroEspecialidade"></span>
     <br>
     <input class="btnCadastro" type="submit" value="Cadastrar">
 </form>
@@ -23,3 +24,21 @@
         {{itens}}
     </tbody>
 </table>
+<script>
+    const nome_especialidade = document.getElementById('nome_especialidade');
+    const form = document.getElementById('formularioEspecialidade');
+
+    form.addEventListener('submit',(e) =>{
+
+        cont = 0;
+
+        if(nome_especialidade.value === '' || nome_especialidade.value == null){
+            cont++;
+            document.getElementById('erroEspecialidade').innerText = 'Nome inválido';
+        }
+
+        if(cont > 0){
+        e.preventDefault();
+        }
+    });
+</script>
