@@ -73,3 +73,6 @@ CREATE TABLE medicos (
     paciente_id_paciente INT(5),
     FOREIGN KEY (paciente_id_paciente) REFERENCES tbl_paciente(id_paciente)
 );
+
+CREATE USER 'rafael'@'localhost' IDENTIFIED BY '123';
+GRANT ALL ON servicos_gerais_ltda.* TO 'rafael'@'localhost' WITH GRANT OPTION;
