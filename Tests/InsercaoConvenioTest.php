@@ -12,7 +12,7 @@ class InsercaoConvenioTest extends TestCase{
     public function testeInserirConvenio(){
 
         $obConvenio = new EntityConvenio;
-        $obConvenio->nome_fantasia = 'Lápis azul';
+        $obConvenio->nome_fantasia = 'Lápis azul5';
         $obConvenio->nome_empresa = 'Lápis';
         $obConvenio->cnpj = 89364391000137;
         $obConvenio->email = 'teste@teste.com';
